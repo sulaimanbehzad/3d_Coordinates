@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid1 import ImageGrid
 import time
 
+
+# link for obtaining chessboard pattern https://calib.io/pages/camera-calibration-pattern-generator
 # check if opencv is installed
 print(cv2.__version__)
 
@@ -123,9 +125,10 @@ img = PlotLocalCoordinates(img, Left_imgpoints[n])
 fig = plt.figure(figsize=(10,10))
 plt.imshow(img)
 plt.axis('off')
-plt.show()
+plt.show(block=False)
+plt.pause(3)
+plt.close()
 
-plt.close('all')
 # Camera Calibration
 Start_Time_Cal = time.perf_counter()
 

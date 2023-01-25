@@ -259,6 +259,8 @@ def StereoCalibration(leftparams, rightparams, objpoints, imgpL, imgpR, Left_Pat
     T = np.vstack((np.hstack((R, t)), np.array([0, 0, 0, 1])))
 
     StereoParams['Transformation'] = T
+    StereoParams['t'] = t
+    StereoParams['R'] = R
     StereoParams['Essential'] = E
     StereoParams['Fundamental'] = F
     StereoParams['MeanError'] = ret
